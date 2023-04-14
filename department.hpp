@@ -25,6 +25,8 @@ class Department : public Faculty
         }
 
         this->name = name;
+        string f = Departments[name].getFacultyName();
+        setFaculty(f);
     }
 
     Department() {}
