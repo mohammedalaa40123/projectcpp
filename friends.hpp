@@ -1,3 +1,4 @@
+#pragma once
 #include <libraries.hpp>
 void enroll(string studentID, string courseName, string grade)
 {

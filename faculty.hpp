@@ -49,17 +49,6 @@ class Faculty
         }
     }
 
-    void setFaculty(string f)
-    {
-        if (!exist(f))
-        {
-            name = "deleted";
-            return;
-        }
-
-        name = f;
-    }
-
     friend void fileRead();
 
     string getFacultyName()

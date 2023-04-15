@@ -25,8 +25,6 @@ class Department : public Faculty
         }
 
         this->name = name;
-        string f = Departments[name].getFacultyName();
-        setFaculty(f);
     }
 
     Department() {}
@@ -73,10 +71,25 @@ class Department : public Faculty
     {
         if (!exist(name))
         {
-            return {"Deleted", "Deleted"};
+            return "deleted";
         }
 
         return name;
+    }
+
+    string getFacultyName()
+    {
+        if (!exist(name))
+        {
+            return "unknown";
+        }
+
+        if (this == &Departments[name])
+        {
+            return Faculty::getFacultyName();
+        }
+
+        return Departments[name].getFacultyName();
     }
 
     static void deleteDepartment(string name)
@@ -91,6 +104,6 @@ class Department : public Faculty
 
         Departments.erase(name);
     }
-    
+
     friend void fileRead();
 };
