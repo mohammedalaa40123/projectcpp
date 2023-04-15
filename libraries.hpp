@@ -7,4 +7,5 @@ using namespace std;
 #include "department.hpp"
 #include "course.hpp"
 #include "student.hpp"
+#include "friends.hpp"
 #include "fileReader.hpp"
