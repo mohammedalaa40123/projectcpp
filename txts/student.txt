@@ -1,0 +1,5 @@
+Kareem Abdelhameed,21-101015,computer engineering,4,0
+Omar Rushdy,21-101051,computer engineering,4,0
+Abdelrahman Safwat,21-101108,computer engineering,4,0
+Mohamed Alaa,21-101142,computer engineering,4,0
+Bola Yosry,21-101147,computer engineering,4,0

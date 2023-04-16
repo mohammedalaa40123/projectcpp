@@ -62,7 +62,7 @@ class Department : public Faculty
 
         for (auto it : Departments)
         {
-            cout << "# department " << i << " : " << it.second.getName() << "from faculty " << it.second.getFacultyName() << endl;
+            cout << "# department " << i << " : " << it.first << "from faculty " << it.second.getFacultyName() << endl;
             i += 1;
         }
     }
@@ -84,12 +84,7 @@ class Department : public Faculty
             return "unknown";
         }
 
-        if (this == &Departments[name])
-        {
-            return Faculty::getFacultyName();
-        }
-
-        return Departments[name].getFacultyName();
+        return Departments[name].Faculty::getFacultyName();
     }
 
     static void deleteDepartment(string name)
@@ -106,4 +101,5 @@ class Department : public Faculty
     }
 
     friend void fileRead();
+    friend void fileSave();
 };

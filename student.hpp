@@ -6,8 +6,8 @@ class student
     Department department;
     float gpa;
     int no_courses;
+    map<Course, string> course_grade;
 
-    map<string, string> course_grade;
     static inline map<string, student> Students;
 
     student(string name1, string id1, Department department1, int num_coures1, float gpa1)
@@ -20,7 +20,7 @@ class student
     }
 
     public:
-    student() {} // we put this because of error
+    student() {}
     student(string id1)
     {
         if (!exist(id1))
@@ -63,6 +63,7 @@ class student
     friend void drop(string, string);
     friend void delete_student(string);
     friend void fileRead();
+    friend void fileSave();
 
     static void list_students()
     {
@@ -102,6 +103,52 @@ class student
         if (c == 0)
         {
             Students[id1] = student(name1, id1, department1, num_courses, gpa1);
+        }
+    }
+
+    void listCourses()
+    {
+        if (Students[id].course_grade.empty())
+        {
+            cout << "this student is not enrolled in any courses yet!\n";
+            return;
+        }
+
+        bool deleted = false;
+        vector<Course> garbage;
+
+        cout << "Course name - grade:\n";
+
+        for (auto i : Students[id].course_grade)
+        {
+            string course = i.first.getName();
+
+            if (course == "Deleted")
+            {
+                garbage.push_back(i.first);
+                deleted = true;
+            }
+
+            cout << course << " - " << i.second << "\n";
+        }
+
+        if (deleted)
+        {
+            cout << "this student is enrolled in some deleted courses, ";
+            cout << "would you like to delete them ? (y/n): ";
+            string ans;
+            cin >> ans;
+
+            if (ans == "y")
+            {
+                for (auto i : garbage)
+                {
+                    Students[id].course_grade.erase(i);
+                    Students[id].no_courses--;
+                }
+
+                cout << "done!\n";
+            }
         }
     }
 };

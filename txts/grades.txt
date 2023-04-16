@@ -1,0 +1,10 @@
+21-101015,object oriented programming,A
+21-101015,ordinary diffrential equtians,A
+21-101051,object oriented programming,A
+21-101051,ordinary diffrential equtians,A
+21-101108,object oriented programming,A
+21-101108,ordinary diffrential equtians,A
+21-101142,object oriented programming,A
+21-101142,ordinary diffrential equtians,A
+21-101147,object oriented programming,A
+21-101147,ordinary diffrential equtians,A

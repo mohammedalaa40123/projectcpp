@@ -4,7 +4,7 @@
 class Faculty
 {
     private:
-    static inline set<string> f;
+    static inline set<string> faculties;
     string name;
 
     public:
@@ -26,30 +26,31 @@ class Faculty
     static bool exist(string name)
     {
         lower(name);
-        return f.find(name) != f.end();
+        return faculties.find(name) != faculties.end();
     }
 
     static void addFaculty(string name)
     {
         lower(name);
-        f.insert(name);
+        faculties.insert(name);
     }
 
     static void listFaculties()
     {
-        if (f.empty())
+        if (faculties.empty())
         {
             cout << "No Faculties Available";
             return; // cout
         }
 
-        for (auto it = f.begin(); it != f.end(); it++)
+        for (auto it = faculties.begin(); it != faculties.end(); it++)
         {
             cout << *it << "\n";
         }
     }
 
     friend void fileRead();
+    friend void fileSave();
 
     string getFacultyName()
     {

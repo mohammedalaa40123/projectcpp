@@ -83,7 +83,7 @@ class Course
 
         for (auto z = Courses.begin(); z != Courses.end(); z++)
         {
-            cout << z->first << "   " << z->second.code << "   " << z->second.noCredits;
+            cout << z->first << " " << z->second.code << " " << z->second.noCredits << "\n";
         }
     }
 
@@ -100,7 +100,7 @@ class Course
         Courses.erase(name);
     }
 
-    string getName()
+    string getName() const
     {
         if (!exist(name))
         {
@@ -140,8 +140,14 @@ class Course
         return Courses[name].no_students;
     }
 
+    bool operator<(const Course x) const
+    {
+        return name < x.name;
+    }
+
     friend void enroll(string, string, string);
     friend void drop(string, string);
     friend void delete_student(string);
     friend void fileRead();
+    friend void fileSave();
 };

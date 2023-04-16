@@ -98,6 +98,33 @@ void fileRead()
 
         student::addstudent(name, id, dep, no_courses, gpa);
     }
-
     file4.close();
+
+
+
+
+     ifstream file5("txts\\grades.txt");
+
+    if (!file5.is_open())
+    {
+        cout << "Error opening file" << endl;
+        return;
+    }
+
+    while (getline(file5, line))
+    {
+        stringstream lineStream(line);
+
+        string ID;
+        string Course;
+        string grade;
+
+        getline(lineStream, ID, ',');
+        getline(lineStream, Course, ',');
+        lineStream >> grade;
+        enroll(ID,Course,grade);
+    }
+
+    file5.close();
+
 }
