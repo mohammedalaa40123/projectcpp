@@ -96,14 +96,11 @@ void fileRead()
         // lower(dep);
         // Department d = Department::Departments[dep];
 
-        student::addstudent(name, id, dep, no_courses, gpa);
+        student::addstudent(name, id, dep, gpa, no_courses);
     }
     file4.close();
 
-
-
-
-     ifstream file5("txts\\grades.txt");
+    ifstream file5("txts\\grades.txt");
 
     if (!file5.is_open())
     {
@@ -122,9 +119,14 @@ void fileRead()
         getline(lineStream, ID, ',');
         getline(lineStream, Course, ',');
         lineStream >> grade;
-        enroll(ID,Course,grade);
+
+        student x(ID);
+
+        if (x.course_grade.find(Course) == x.course_grade.end())
+        {
+            enroll(ID, Course, grade);
+        }
     }
 
     file5.close();
-
 }
