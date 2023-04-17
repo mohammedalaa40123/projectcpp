@@ -1,2 +1,2 @@
-object oriented programming,CSE123,3,0
-ordinary diffrential equtians,MA254,3,0
+object oriented programming,CSE123,3
+ordinary diffrential equtians,MA254,3
