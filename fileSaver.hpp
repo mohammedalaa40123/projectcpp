@@ -23,7 +23,7 @@ void fileSave()
 
     for (auto i : Course::Courses)
     {
-        filecourse << i.first << "," << i.second.code << "," << i.second.noCredits << "," << i.second.no_students << endl;
+        filecourse << i.first << "," << i.second.code << "," << i.second.noCredits << endl;
     }
     filecourse.close();
 
@@ -31,7 +31,7 @@ void fileSave()
 
     for (auto i : student::Students)
     {
-        filestudent << i.second.name << "," << i.second.id << "," << i.second.department.getName() << "," << i.second.gpa << "," << i.second.no_courses << endl;
+        filestudent << i.second.name << "," << i.second.id << "," << i.second.department.getName() << "," << i.second.gpa << endl;
     }
     filestudent.close();
 

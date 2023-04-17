@@ -62,10 +62,8 @@ void fileRead()
         getline(lineStream, name, ',');
         getline(lineStream, code, ',');
         lineStream >> noCredits;
-        lineStream.ignore(); // ignore the comma
-        lineStream >> no_students;
 
-        Course::addCourse(name, code, noCredits, no_students);
+        Course::addCourse(name, code, noCredits);
     }
 
     file3.close();
@@ -91,12 +89,10 @@ void fileRead()
         getline(lineStream, id, ',');
         getline(lineStream, dep, ',');
         lineStream >> gpa;
-        lineStream.ignore(); // ignore the comma
-        lineStream >> no_courses;
         // lower(dep);
         // Department d = Department::Departments[dep];
 
-        student::addstudent(name, id, dep, gpa, no_courses);
+        student::addstudent(name, id, dep, gpa);
     }
     file4.close();
 
